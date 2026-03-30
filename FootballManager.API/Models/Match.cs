@@ -10,5 +10,6 @@
         public DateTime MatchDate { get; set; }
         public bool IsPlayed { get; set; }
         public string? MatchReport { get; set; }
+        public int Round { get; set; }
     }
 }

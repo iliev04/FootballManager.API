@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FootballManager.API.Models
 {
@@ -9,5 +10,8 @@ namespace FootballManager.API.Models
         [Required, EmailAddress] public string Email { get; set; } = string.Empty;
         [Required] public string PasswordHash { get; set; } = string.Empty;
         [Required] public string Role { get; set; } = "Coach";
+        public int? ClubId { get; set; }
+        [ForeignKey("ClubId")]
+        public Club? Club { get; set; }
     }
 }

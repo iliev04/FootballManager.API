@@ -34,10 +34,10 @@ namespace FootballManager.API.Controllers
             var homeStarters = homeClub.Players.Where(p => p.IsStartingEleven).ToList();
             var awayStarters = awayClub.Players.Where(p => p.IsStartingEleven).ToList();
 
-            if (homeStarters.Count != 11 || awayStarters.Count != 11)
+            /*if (homeStarters.Count != 11 || awayStarters.Count != 11)
             {
                 return BadRequest($"Мачът не може да започне! Домакините имат {homeStarters.Count} титуляри, а гостите {awayStarters.Count}. Трябват точно по 11.");
-            }
+            }*/
 
             double homeAttackPower = homeStarters.Sum(p => p.AttackStat * (p.Stamina / 100.0)) * 1.10;
             double homeDefensePower = homeStarters.Sum(p => p.DefenseStat * (p.Stamina / 100.0));
